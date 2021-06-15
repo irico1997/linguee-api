@@ -36,3 +36,6 @@ def normalize(text: str) -> str:
     For example "  foo   bar " is converted to "foo bar".
     """
     return re.sub(r"\s+", " ", text).strip()
+
+def normalize_punctuation(text: str) -> str:
+    return re.sub(r":", "", normalize(text))

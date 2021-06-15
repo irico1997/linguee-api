@@ -43,13 +43,19 @@ class SearchResult(BaseModel):
             pos: Optional[str] = Field(example="adjective / past participle, masculine")
             audio_links: Optional[list[AudioLink]]
             examples: Optional[list[TranslationExample]]
-
+        
+        class AltForm(BaseModel):
+            """Alternate forms. Only testing on german"""
+            text: str = Field(example="Frauen")
+            form: str = Field(example="plural")
+        
         featured: bool = Field(example=False)
         text: str = Field(example="obrigado")
         pos: Optional[str] = Field(example="interjection")
         grammar_info: Optional[str] = Field(example="Akk")
         audio_links: Optional[list[AudioLink]]
         translations: list[Translation]
+        alt_form: Optional[AltForm]
 
     class Example(BaseModel):
         """One example."""

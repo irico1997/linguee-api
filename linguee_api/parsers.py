@@ -11,7 +11,7 @@ from linguee_api.models import (
     SearchResult,
     SearchResultOrError,
 )
-from linguee_api.parser_utils import concat_values, normalize
+from linguee_api.parser_utils import concat_values, normalize, normalize_punctuation
 
 
 class IParser(abc.ABC):
@@ -193,6 +193,25 @@ lemma_schema = [
                 ],
             ),
         ],
+    ),
+    Group(
+        name="alt_form",
+        css="span.tag_forms",
+        quant="1",
+        children=[
+            String(
+                name="text",
+                css="a.formLink",
+                quant="1",
+                callback=normalize_punctuation,
+            ),
+            String(
+                name="form",
+                css="span.tag_formname",
+                quant="1",
+                callback=normalize_punctuation,
+            ),
+        ]
     ),
 ]
 
