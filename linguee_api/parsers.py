@@ -197,7 +197,7 @@ lemma_schema = [
     Group(
         name="alt_form",
         css="span.tag_forms",
-        quant="1",
+        quant="?",
         children=[
             String(
                 name="text",
