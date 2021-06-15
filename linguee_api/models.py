@@ -55,7 +55,7 @@ class SearchResult(BaseModel):
         grammar_info: Optional[str] = Field(example="Akk")
         audio_links: Optional[list[AudioLink]]
         translations: list[Translation]
-        alt_forms: Optional[AltForm]
+        alt_form: Optional[AltForm]
 
     class Example(BaseModel):
         """One example."""
