@@ -206,7 +206,7 @@ lemma_schema = [
                 callback=normalize,
             ),
             String(
-                name="form",
+                name="alt_pos",
                 css="span.tag_formname",
                 quant="*",
                 callback=normalize_punctuation,
