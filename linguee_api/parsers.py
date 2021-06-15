@@ -197,18 +197,18 @@ lemma_schema = [
     Group(
         name="alt_form",
         css="h2.line.lemma_desc > span.tag_forms",
-        quant="?",
+        quant="*",
         children=[
             String(
                 name="alt_word",
                 css="a.formLink",
-                quant="1",
+                quant="*",
                 callback=normalize,
             ),
             String(
                 name="form",
                 css="span.tag_formname",
-                quant="1",
+                quant="*",
                 callback=normalize_punctuation,
             ),
         ]
