@@ -203,7 +203,7 @@ lemma_schema = [
                 name="text",
                 css="a.formLink",
                 quant="1",
-                callback=normalize_punctuation,
+                callback=normalize,
             ),
             String(
                 name="form",
