@@ -46,7 +46,7 @@ class SearchResult(BaseModel):
         
         class AltForm(BaseModel):
             """Alternate forms. Only testing on german"""
-            text: str = Field(example="Frauen")
+            alt_word: str = Field(example="Frauen")
             form: str = Field(example="plural")
         
         featured: bool = Field(example=False)
@@ -55,7 +55,7 @@ class SearchResult(BaseModel):
         grammar_info: Optional[str] = Field(example="Akk")
         audio_links: Optional[list[AudioLink]]
         translations: list[Translation]
-        alt_form: Optional[AltForm]
+        alt_forms: Optional[AltForm]
 
     class Example(BaseModel):
         """One example."""

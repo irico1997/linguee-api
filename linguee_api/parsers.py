@@ -186,7 +186,7 @@ lemma_schema = [
             Group(
                 name="examples",
                 css=".example_lines > .example",
-                quant="*",
+                quant="?", # This doesn't work for some languages lol.
                 children=[
                     String(name="src", css=".tag_s", quant=1, callback=normalize),
                     String(name="dst", css=".tag_t", quant=1, callback=normalize),
@@ -195,12 +195,12 @@ lemma_schema = [
         ],
     ),
     Group(
-        name="alt_form",
-        css="span.tag_forms",
-        quant="?",
+        name="alt_forms",
+        css="h2.line.lemma_desc > span.tag_forms",
+        quant="*",
         children=[
             String(
-                name="text",
+                name="alt_word",
                 css="a.formLink",
                 quant="1",
                 callback=normalize,
@@ -209,7 +209,7 @@ lemma_schema = [
                 name="form",
                 css="span.tag_formname",
                 quant="1",
-                callback=normalize_punctuation,
+                callback=normalize,
             ),
         ]
     ),
