@@ -209,7 +209,7 @@ lemma_schema = [
                 name="form",
                 css="span.tag_formname",
                 quant="1",
-                callback=normalize,
+                callback=normalize_punctuation,
             ),
         ]
     ),
