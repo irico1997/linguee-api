@@ -46,8 +46,8 @@ class SearchResult(BaseModel):
         
         class AltForm(BaseModel):
             """Alternate forms. Only testing on german"""
-            alt_word: list[str] = [Field(example="Frauen")]
-            alt_pos: list[str] = [Field(example="plural")]
+            alt_word: list[str] = Field(example=["Frauen"])
+            alt_pos: list[str] = Field(example=["plural"])
         
         featured: bool = Field(example=False)
         text: str = Field(example="obrigado")
